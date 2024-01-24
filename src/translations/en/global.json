@@ -1,0 +1,14 @@
+{
+    "header": {
+        "message": "Tu generador de rutinas con IA"
+    },
+    "peso": {
+        "message":"Peso"
+    },
+    "altura": {
+        "message":"Altura"
+    },
+    "Aspiraciónes": {
+        "message":"Aspiraciónes"
+    }
+}

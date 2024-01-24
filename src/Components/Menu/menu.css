@@ -1,0 +1,106 @@
+.menu__container {
+    grid-template-columns: repeat(1fr, 20px);
+    column-gap: 3rem;
+    justify-content: center;
+}
+.menu__content {
+    background: black;
+    border: 1px solid rgba(0 , 0, 0 , 0.1);
+    padding: 3rem 4rem;
+    border-radius: 1.25rem;
+}
+
+.menu__box {
+    display: flex;
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+.menu__group {
+    display: grid;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.menu__data {
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.menu__name {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    line-height: 18px;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.menu__form-tag {
+    top: -0.75rem;
+    left: 1.25rem;
+    font-size: var(--small-font-size);
+    color: white;
+    padding: 0.25rem;
+    z-index: 10;
+}
+
+.menu__form-input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0 , 0 , 0, 0.3);
+    background: none;
+    color: var(--text-color);
+    outline: none;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    z-index: 1;
+}
+.button {
+    margin: auto;
+    margin-top: 1rem;
+    border: none;
+    width: 14rem;
+    height: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #1C1A1C;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+    fill: #AAAAAA;
+    transition: all 800ms ease;
+}
+.text {
+    font-weight: 600;
+    color: #AAAAAA;
+    font-size: 0.8rem;
+}
+.button:hover {
+    background: linear-gradient(0deg,#A47CF3,#683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+  }
+
+.button:hover .text {
+    color: white;
+}
+
+.button:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+} 
+
+.api__response {
+    font-size: 2.2rem;
+    color: white;
+}

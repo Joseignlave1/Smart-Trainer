@@ -4,10 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import global_en from "./translations/en";
+import global_es from "./translations/es";
+import i18next from 'i18next';
+import { I18nextProvider } from 'react-i18next';
+
+i18next.init({
+  interpolation: {escapeValue: true},
+  lng: "en",
+  resourcers: {
+    en: {
+      global_en,
+    },
+    es: {
+      global_es,
+    }
+  }
+})
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <I18nextProvider i18n={i18next}>
+      <App />
+    </I18nextProvider>
   </React.StrictMode>
 );
 

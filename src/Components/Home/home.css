@@ -1,0 +1,24 @@
+.home__container {
+    row-gap: 7rem;
+}
+.home__content {
+    grid-template-columns: 116px repeat(2,1fr);
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.home__social {
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+}
+
+.home__social-icon {
+    font-size: 1.25rem;
+    color: var(--title-color);
+}
+
+.home__social-icon:hover {
+    color: var(--title-color-dark);
+}
