@@ -81,8 +81,9 @@ textarea {
 }
 
 body {
-  background: url(./Components/Images/Post\ de\ Instagram\ Prueba\ Clase\ Gratis\ Gym.png);
-  background-size: cover;
+  background: url(/src/Components/Images/pexels-ketut-subiyanto-4853664.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
   color: var(--text-color);
 }
 h1,h2,h3 {
@@ -108,6 +109,11 @@ img {
 
 
 /* CLASES */
+.app__container {
+  background-color: white;
+  margin-top: 1rem;
+}
+
 .section {
   padding: 6rem 0 2rem;
 }
@@ -120,7 +126,6 @@ img {
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: 4rem;
 }
 
 .section__title,
@@ -169,7 +174,10 @@ img {
 /*BreakPoints*/
 
 /*Larger Devices */
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1600px) {
+  .app__container {
+    margin-top: 8rem;
+  }
   .container {
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
@@ -185,8 +193,9 @@ img {
 }
 
 /* Medium Devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   body {
+    background-image: url(./Components/Images/pexels-cottonbro-studio-6701941.jpg);
     margin: 0 0 var(--header-height) 0 ;
   }
   .section {
@@ -199,13 +208,23 @@ img {
 }
 
 @media screen and (max-width: 576px) {
-  
+  body {
+    background: url(./Components/Images/pexels-cottonbro-studio-6701941.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .app__container {
+    margin-top: -8rem;
+  }
 }
 
 /*Small Devices */
 @media screen and (max-width: 350px) {
   :root {
     --big-font-size: 2.25rem;
+  }
+  body {
+    background-image: url(./Components/Images/pexels-cottonbro-studio-6701941.jpg);
   }
   .container {
     margin-left: var(--mb-1-);

@@ -21,7 +21,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <span className="footer__copy">
-                    &#169; SmartTrainer. All Rights reserved
+                    &#169; Smart Trainer. All Rights reserved
                 </span>
             </div>
         </footer>

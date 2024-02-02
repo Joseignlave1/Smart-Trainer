@@ -1,19 +1,23 @@
 import './App.css';
-import Home from './Components/Home';
+import Title from './Components/Title';
 import Header from './Components/Header';
-import About from './Components/About/About';
+import Description from './Components/Description/Description';
 import MenuDropDown from './Components/Menu/MenuDropdown';
-import Footer from './Components/Footer/Footer';
+import About from "./Components/About/About";
+import Contact from './Components/Contact/Contact';
+import Footer from "./Components/Footer/Footer";
 const App = () => {
   return(
-    <div>
-      <>
-        <Home/>
+    <div className="background__container">
+        <Title/>
         <Header/>
+        <Description/>
+        <div className="app__container">
         <MenuDropDown/>
         <About/>
+        <Contact/>
         <Footer/>
-      </>
+        </div>
     </div>
   )
 }

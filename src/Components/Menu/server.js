@@ -14,28 +14,39 @@ app.post('/generate-routine', async (req, res) => {
         const { weight, height, aspirations } = req.body;
 
         // Construye el prompt según la entrada del usuario
-        const requestBody = [
-            { role: 'system', content: "Hello! I'm an AI assistant bot based on ChatGPT 3. How may I help you?" },
-            { role: 'user', content: `Create a routine for the gym. Weight: ${weight}, Height: ${height}, Aspirations: ${aspirations}` },
-        ];
+
+        const prompts = {
+            model: 'meta-llama/Llama-2-70b-chat-hf',
+            messages: [
+              {
+                role: 'user',
+                content: `Create a routine for the gym. Weight: ${weight}, Height: ${height}, Aspirations: ${aspirations}`
+              }
+            ]
+          };
+          
+          // Configurando solicitud API
+          const metaOptions = {
+            method: 'POST',
+            url: 'https://meta-llama-2-ai.p.rapidapi.com/',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-RapidAPI-Key': 'b3747dea79msha71c17d145622fdp1ab7b6jsn42df68fa2626',
+              'X-RapidAPI-Host': 'meta-llama-2-ai.p.rapidapi.com',
+            },
+            data: prompts  // Enviar directamente el objeto prompts como el contenido del mensaje
+          };
+          
+          
 
         // Configurando solicitud API
-        const chatGptOptions = {
-            method: 'POST',
-            url: 'https://chatgpt-api8.p.rapidapi.com/',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-RapidAPI-Key': 'b3747dea79msha71c17d145622fdp1ab7b6jsn42df68fa2626',
-                'X-RapidAPI-Host': 'chatgpt-api8.p.rapidapi.com',
-            },
-            data: requestBody,
-        };
+        
 
         // Realizamos la solicitud a la API
-        const response = await axios(chatGptOptions);
+        const response = await axios.request(metaOptions);
 
         // Extraer respuesta y enviarla al cliente
-        const generatedRoutine = response.data.join('\n');
+        const generatedRoutine = response.data;
         res.json({ generatedRoutine });
     } catch (error) {
         console.error(error);
